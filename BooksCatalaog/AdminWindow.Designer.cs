@@ -41,10 +41,14 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.deletedLabel = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rentedLabel = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -167,14 +171,14 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox6
+            // deletedLabel
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox6.Location = new System.Drawing.Point(593, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(159, 30);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.deletedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.deletedLabel.Location = new System.Drawing.Point(593, 27);
+            this.deletedLabel.Name = "deletedLabel";
+            this.deletedLabel.Size = new System.Drawing.Size(159, 30);
+            this.deletedLabel.TabIndex = 0;
+            this.deletedLabel.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
@@ -206,9 +210,52 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 50);
             this.button3.TabIndex = 16;
-            this.button3.Text = "Просмотреть ползователей";
+            this.button3.Text = "Просмотреть пользователей";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.OrangeRed;
+            this.button4.Location = new System.Drawing.Point(612, 194);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(140, 28);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Снять бронь";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label7.Location = new System.Drawing.Point(488, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 25);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Название";
+            this.label7.Click += new System.EventHandler(this.label7_Click_1);
+            // 
+            // rentedLabel
+            // 
+            this.rentedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.rentedLabel.Location = new System.Drawing.Point(593, 154);
+            this.rentedLabel.Name = "rentedLabel";
+            this.rentedLabel.Size = new System.Drawing.Size(159, 30);
+            this.rentedLabel.TabIndex = 17;
+            this.rentedLabel.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.OrangeRed;
+            this.button5.Location = new System.Drawing.Point(340, 262);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(140, 50);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Просмотреть книги";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // AdminWindow
             // 
@@ -216,6 +263,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(764, 324);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.rentedLabel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -230,7 +281,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.deletedLabel);
             this.Controls.Add(this.textBox1);
             this.Name = "AdminWindow";
             this.Text = "AdminWindow";
@@ -253,9 +304,13 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox deletedLabel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox rentedLabel;
+        private System.Windows.Forms.Button button5;
     }
 }

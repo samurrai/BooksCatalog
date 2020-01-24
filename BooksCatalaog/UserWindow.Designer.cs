@@ -170,6 +170,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "UserWindow";
             this.Text = "UserWindow";
+            this.Load += new System.EventHandler(this.UserWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

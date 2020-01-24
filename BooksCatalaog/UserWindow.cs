@@ -13,6 +13,7 @@ namespace BooksCatalaog
     public partial class UserWindow : Form
     {
         User user;
+
         public UserWindow(User currentUser)
         {
             InitializeComponent();
@@ -27,10 +28,7 @@ namespace BooksCatalaog
                 {
                     foreach (var book in context.Books)
                     {
-                        if (book.IsAvailable)
-                        {
-                            listBox1.Items.Add(book.Name);
-                        }
+                        listBox1.Items.Add(book.Name);
                     }
                 }
 
@@ -42,7 +40,7 @@ namespace BooksCatalaog
                     }
                 }
 
-                if (user.LikedBooks != null)
+                if (user.ReservedBooks != null)
                 {
                     foreach (var book in user.ReservedBooks)
                     {
@@ -74,11 +72,12 @@ namespace BooksCatalaog
                     if ((listBox1.SelectedItem as string) == book.Name)
                     {
                         user.LikedBooks.Add(book);
-                        context.SaveChanges();
                         listBox2.Items.Add(book.Name);
                         MessageBox.Show("Вам понравилась книга");
+                        break;
                     }
                 }
+                context.SaveChanges();
             }
         }
 
@@ -92,10 +91,9 @@ namespace BooksCatalaog
                     {
                         book.IsAvailable = false;
                         user.ReservedBooks.Add(book);
-                        context.Books.Remove(book);
-                        listBox1.Items.Remove(book.Name);
                         listBox3.Items.Add(book.Name);
                         MessageBox.Show("Вы забронировали книгу");
+                        break;
                     }
                 }
                 context.SaveChanges();
@@ -117,6 +115,11 @@ namespace BooksCatalaog
                 }
 
             }
+        }
+
+        private void UserWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

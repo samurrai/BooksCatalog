@@ -34,7 +34,7 @@ namespace BooksCatalaog
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox6.Text))
+            if (string.IsNullOrWhiteSpace(deletedLabel.Text))
             {
                 MessageBox.Show("Введите название книги");
             }
@@ -46,7 +46,7 @@ namespace BooksCatalaog
                     Book deletedBook = new Book();
                     foreach (var book in context.Books)
                     {
-                        if (book.Name == textBox6.Text)
+                        if (book.Name == deletedLabel.Text)
                         {
                             isExist = true;
                             deletedBook = book;
@@ -56,6 +56,7 @@ namespace BooksCatalaog
                     if (isExist)
                     {
                         context.Books.Remove(deletedBook);
+                        context.SaveChanges();
                         MessageBox.Show("Книга удалена");
                     }
                     else
@@ -105,6 +106,53 @@ namespace BooksCatalaog
                     users += $"{user.Login} {user.Password} {user.PhoneNumber}\n";
                 }
                 MessageBox.Show(users);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var context = new BooksContext())
+            {
+                bool isExist = false;
+                foreach (var book in context.Books)
+                {
+                    if (book.Name == rentedLabel.Text)
+                    {
+                        isExist = true;
+                        book.IsAvailable = true;
+                    }
+                }
+                if (!isExist)
+                {
+                    MessageBox.Show("Книга не найдена");
+                }
+                else
+                {
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (var context = new BooksContext())
+            {
+                string books = "";
+                foreach (var book in context.Books)
+                {
+                    books += book.Name + "\n";
+                }
+                MessageBox.Show(books);
             }
         }
     }
